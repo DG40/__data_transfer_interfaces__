@@ -1,17 +1,18 @@
 #include <Wire.h>  // подключаем библиотеку
 
-void setup() {
+void setup() 
+{
   Wire.begin(); // запускаем шину i2c без адреса, т.к. это Мастер
 }
 
 byte x = 0;
 
-void loop() {
+void loop() 
+{
   Wire.beginTransmission(8); // начало передачи на устройство номер 8
   Wire.write("x is ");       // отправляем цепочку текстовых байт
   Wire.write(x);             // отправляем байт из переменной
   Wire.endTransmission();    // останавливаем передачу
-
   x++;                       // увеличиваем значение переменной на 1
   delay(500);                // ждем полчекунды
 }
